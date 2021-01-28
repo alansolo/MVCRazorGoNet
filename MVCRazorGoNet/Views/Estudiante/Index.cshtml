@@ -1,0 +1,70 @@
+﻿@model MVCRazorGoNet.Models.Estudiante
+
+@{
+    ViewBag.Title = "Estudiantes";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Estudiante/Estudiante.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Estudiante/Estudiante.js"></script>
+</head>
+<body>
+
+    <hr/>
+
+    <h3>
+        @ViewBag.Title    
+    </h3>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                @Html.LabelFor(m => m.NumMatricula)
+                @Html.TextBoxFor(m => m.NumMatricula, new { @class = "form-control-plaintext", @id = "txtNumMatricula", @placeholder = "Numero Matricula" })
+            </div>
+            <div class="col-12">
+                @Html.LabelFor(m => m.Nombre)
+                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control-plaintext", @id = "txtNombre", @placeholder = "Nombre" })
+            </div>
+            <div class="col-12">
+                @Html.LabelFor(m => m.ApellidoPaterno)
+                @Html.TextBoxFor(m => m.ApellidoPaterno, new { @class = "form-control-plaintext", @id = "txtApellidoPaterno", @placeholder = "Apellido Paterno" })
+            </div>
+            <div class="col-12">
+                @Html.LabelFor(m => m.ApellidoMaterno)
+                @Html.TextBoxFor(m => m.ApellidoMaterno, new { @class = "form-control-plaintext", @id = "txtApellidoMaterno", @placeholder = "Apellido Materno" })
+            </div>
+            <div class="col-12">
+                @Html.LabelFor(m => m.Carrera)
+                @Html.TextBoxFor(m => m.Carrera, new { @class = "form-control-plaintext", @id = "txtCarrera", @placeholder = "Carrera" })
+            </div>
+            <div class="col-12">
+                @Html.LabelFor(m => m.Edad)
+                @Html.TextBoxFor(m => m.Edad, new { @class = "form-control-plaintext", @id = "txtEdad", @placeholder = "Edad" })
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-primary" onclick="GetEstudiante()">Obtener Estudiantes</button>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-12" id="divListEstudiantes">
+            </div>
+        </div>
+
+</body>
+</html>
+
